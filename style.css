@@ -1,0 +1,475 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: white;
+    font-weight: 400;
+    cursor: none;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 8px;
+    background-color: black;
+    color: #95C11E;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #95C11E;
+    border-radius: 10px;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #95C11E;
+    position: fixed;
+    z-index: 99;
+    transition: all ease-out 0.1s;
+    pointer-events: none;
+}
+#blurryCursor{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: #96c11ed1;
+    position: fixed;
+    filter:blur(120px);
+    z-index: -11;
+    transition: all linear 0.5s;
+}
+#nav{
+    width: 100%;
+    height: 100px;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+    padding: 0px 100px;
+    position: fixed;
+    z-index: 99;
+}
+#nav img{
+ height: 70px;
+}
+video{
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    z-index: -10;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+    z-index: -10;
+    width: 100%;
+    min-height: 100vh;
+}
+#page01{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#page01 h1{
+    font-size: 6em;
+    font-weight: 900;
+    text-transform:uppercase;
+    position: relative;
+    width: 65%;
+}
+#page01 h1::before{
+    content: "Eat. Drink. Play.";
+    position: absolute;
+    color: black;
+    top:-4px;
+    left:-4px;
+    -webkit-text-stroke: 1px #95C11E;
+    z-index: -1;
+}
+#page01 h2{
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-transform:uppercase;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    
+} 
+#page01 p{
+    font-size: 1.3rem;
+    width: 45%;
+    text-align:center;
+}
+#main #arrow-icon{
+    height: 180px;
+    width: 180px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #95C11E;
+    /* box-shadow: 0px 0px 0px 1px #95C11E; */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -2%;
+    top: 80vh;
+    z-index: 99999;
+    transition: all ease 0.5s;
+}
+#page01 i{
+    font-size: 50px;
+}
+#arrow-icon:hover{
+    transform: scale(0.4);
+    background-color: #95C11E;
+}
+#page02{
+    min-height: 100vh;
+    width: 100%;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x:auto ;
+    overflow-y: hidden;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+#scroller h4{
+    color: black;
+    display: inline-block;
+    font-size: 6rem;
+    font-weight: 900;
+    font-family:sans-serif;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px white;
+    margin-left:20px ;
+    transition: all linear 0.5s;
+}
+#scroller h4:hover{
+    color: #95C11E;
+    -webkit-text-stroke: #95C11E;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    height: 50vh;
+    width: 100%;
+    margin-top:8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#about-us img{
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+#about-us-content{
+    width: 50%;
+    text-align: center;
+}
+#about-us h3{
+    font-size: 2.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+#about-us p{
+    margin-top: 20px;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+}
+#cards{
+    height: 90vh;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 4%;
+    /* z-index: 99; */
+}
+.card{
+    height: 80%;
+    width: 24%;
+    /* background-color: navajowhite; */
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+    
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    background-color: #95C11E;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    padding-top: 30%;
+    border-radius: 18px;
+    opacity:0;
+    transition: all ease 0.6s;
+}
+.overlay h4{
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2em;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+.overlay p{
+    color: black;
+    line-height: 2rem;
+    font-size: 1.2em;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+#green-bar{
+    height: 30vh;
+    background: linear-gradient( to left bottom,#28A535,#A9DB22);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#green-bar h4{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+    font-size: 25px;
+    width: 50%;
+    text-align: center;
+}
+#green-bar img{
+    height: 100%;
+    width: 14%;
+    object-fit:cover;
+}
+#image-scroller{
+    white-space: nowrap;
+    overflow-x:auto ;
+    overflow-y: hidden;
+    z-index: 10;
+    
+
+}
+#img-scroller01{
+    height: 60vh;
+    display: flex;
+    gap: 60px;
+    padding: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 120px;
+    /* transform: rotate(-5deg); */
+    transform: rotate(-3deg) translateY(10%);
+    animation: scroll-img 30s linear infinite;
+}
+#image-scroller::-webkit-scrollbar{
+    display: none;
+}
+#img-scroller01 img{
+    height: 270px;
+    min-width: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+@keyframes scroll-img {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(-100%);
+    }
+}
+#page04{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page04>p{
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 60%;
+    text-align: center;
+}
+#page04 #left{
+    height: 3rem;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+#page04 #right{
+    height: 3rem;
+    position: absolute;
+    bottom: 20%;
+    right: 15%;
+}
+#page05{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    /* justify-content: center; */
+    height: 40vh;
+}
+#boxes{
+    display: flex;
+    /* height: 8rem; */
+    /* width: 40%; */
+    /* background-color: #95C11E; */
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 3.5rem;
+}
+#page05 h3{
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke:1px rgba(255, 255, 255, 0.742);
+    color: black;
+}
+.box-container{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: black;
+    height: 10rem;
+    width: 25rem;
+    background-color: #B0E423;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-size: 105%;
+    background-position: center;
+    transition: all 0.4s ease-in ;
+}
+#boxes #box1:hover{
+    background-image:         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer-1024x683.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+    color: white;
+    background-size: 100%;
+    background-position: center;
+    
+}
+#boxes #box2:hover{
+    background-image:         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/sb-instagram-feed-images/442560574_959754042122832_495329382656501152_nlow.jpg?strip=all&lossy=1&sharp=1&w=1920&ssl=1");
+    color: white;
+    background-size: 100%;
+    background-position: center;
+    
+}
+#boxes #box3:hover{
+    background-image:         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1");
+    color: white;
+    background-size: 100%;
+    background-position: center;
+    
+}
+#footer{
+    height: 45vh;
+    background:linear-gradient(to left bottom,#28A535,#A9DB22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#footer>img{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    object-fit: cover;
+}
+#footer-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#footer-content{
+    position: absolute;
+    display: flex;
+    gap: 9rem;
+    align-items: center;
+    justify-content: start;
+    width: 80%;
+}
+#footer-content ul{
+    list-style: none;
+}
+#footer-content ul li{
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 2.5rem
+}
+#footer-items p{
+    position: absolute;
+    bottom: 1rem;
+    color: black;
+    font-size: 0.8rem;
+    left: 10%;
+}
+h1::selection{
+    background-color: white;
+    color: #95C11E;
+}
+h3::selection{
+    background-color: white;
+    color: #95C11E;
+}
+p::selection{
+    background-color: white;
+    color: #95C11E;
+}
+#footer-content ul li::selection{
+    background-color: white;
+    color: #95C11E;
+}
+.box-container::selection{
+    background-color: white;
+    color: #95C11E;
+}
